@@ -1,5 +1,6 @@
 #include "1.h"
 void sort(int *,int);
+void sysSort(int*,int);
 void writeData(int *,int,char[]);
 void readData(int *,int,char[]);
 void sort(int *a,int num){
@@ -14,6 +15,13 @@ void sort(int *a,int num){
                
           }
      }
+}
+int cmp ( const void *a , const void *b ) 
+{ 
+  return *(int *)a - *(int *)b; 
+} 
+void sysSort(int *a,int num){
+     qsort(a,num,sizeof(a[0]),cmp); 
 }
 void writeData(int *a,int num,char str[]){
   int count = 0;
@@ -53,7 +61,7 @@ void readData(int *a,int num,char str[]){
   printf("%s", pathname);
   int fd;
   char data[SIZE];
-  if ((fd = open(pathname, FLAGS)) == -1) {
+  if ((fd = open(pathname, ONLYREAD)) == -1) {
      printf("open file fail\n");
      return 0;
   }
