@@ -1,0 +1,63 @@
+cat /proc/version  //查看Linux下内核版本信息
+(本机git仓库地址在"/demo1"或者myRepository中)
+本机增加ssh key
+ssh-keygen -t rsa -C "xiong_zhi_cong@163.com"\\建立ssh链接
+ssh -v git@github.com
+ssh-agent -s
+ssh-add ~/.ssh/id_rsa
+ssh -T git@github.com
+
+git  config --global  user.name 'StarForAll'
+git  config --global  user.email 'xiong_zhi_cong@163.com'
+git config user.name       //获得git本机用户名
+git config user.email       //获得git本机邮箱名
+git config --list //git配置信息
+touch 'xx.c'//在仓库下新建xx.c文件,然后使用本机编辑器进行编辑
+git add 'xx.c'\\将文件添加到暂存区
+git status \\判断文件状态
+git commit -m 'xx.c'\\将xx.c文件添加到仓库
+git remote add origin https://github.com/StarForAll/myRepository.git //关联到远程库
+git pull --rebase origin master //获取远程库与本地同步合并
+git push -u origin master//实际上是把当前分支test推送到远程
+
+git rm 'xx.c'\\将xx.c文件从git仓库中删除
+git clone git@github.com:StarForAll/myRepository.git
+https://git clone git@github.com/StarForAll/myRepository.git
+
+将修改之后的文件或者是新添加的文件(在原来的目录下)
+1.git commit  //显示修改的文件
+2.git add '对应的文件'  //在对应的目录下进行
+3.git commit -m '对应的文件'  //提交到服务器上
+4.git push -u origin master//实际上是把当前分支test推送到远程
+
+git branch -a//查看所有的分支
+//删除文件
+1.本地的删除
+2.git rm -f 文件夹
+3.git commit -m 'remove -rf 文件夹'
+4.git push -u origin master
+git commit -a -m 'added a new footer [issue 53]'
+//新建分支
+git checkout -b  分支名//新建分支并转到
+git add *//新建的文件添加到该分支中
+git commit -m 'init 分支名'
+git push -u origin 分支名//同步到服务器端
+git checkout master//切换到master分支
+
+//分支的合并:
+在master后创建两个分支,可以有两个相同的文件;
+但在合并的时候回遇到冲突,需要解决.
+1.回到master分支
+git checkout master
+2.合并到master中
+git merge 分支名
+3.删除这个分支
+---------在遇到相同的文件时,有两种操作(阻止合并/继续合并)
+1>阻止合并git merge--abort
+2>继续合并:git status(查看重复的文件)
+使用文件增加(git add)操作,之后会将两个文件合并成一个文件.
+
+
+//删除一个分支
+git push origin :分支名;//删除远程的分支
+git branch -D 分支名//删除本地分支
