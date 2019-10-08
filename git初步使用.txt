@@ -1,7 +1,8 @@
-cat /proc/version  //æŸ¥çœ‹Linuxä¸‹å†…æ ¸ç‰ˆæœ¬ä¿¡æ¯
-(æœ¬æœºgitä»“åº“åœ°å€åœ¨"/demo1"æˆ–è€…myRepositoryä¸­)
-æœ¬æœºå¢åŠ ssh key
-ssh-keygen -t rsa -C "xiong_zhi_cong@163.com"\\å»ºç«‹sshé“¾æ¥
+cat /proc/version  //²é¿´LinuxÏÂÄÚºË°æ±¾ĞÅÏ¢
+(ÕËºÅÃÜÂë:asjdak1@nckjdkfh)
+(±¾»úgit²Ö¿âµØÖ·ÔÚ"/demo1"»òÕßmyRepositoryÖĞ)
+±¾»úÔö¼Óssh key
+ssh-keygen -t rsa -C "xiong_zhi_cong@163.com"\\½¨Á¢sshÁ´½Ó
 ssh -v git@github.com
 ssh-agent -s
 ssh-add ~/.ssh/id_rsa
@@ -9,55 +10,63 @@ ssh -T git@github.com
 
 git  config --global  user.name 'StarForAll'
 git  config --global  user.email 'xiong_zhi_cong@163.com'
-git config user.name       //è·å¾—gitæœ¬æœºç”¨æˆ·å
-git config user.email       //è·å¾—gitæœ¬æœºé‚®ç®±å
-git config --list //gité…ç½®ä¿¡æ¯
-touch 'xx.c'//åœ¨ä»“åº“ä¸‹æ–°å»ºxx.cæ–‡ä»¶,ç„¶åä½¿ç”¨æœ¬æœºç¼–è¾‘å™¨è¿›è¡Œç¼–è¾‘
-git add 'xx.c'\\å°†æ–‡ä»¶æ·»åŠ åˆ°æš‚å­˜åŒº
-git status \\åˆ¤æ–­æ–‡ä»¶çŠ¶æ€
-git commit -m 'xx.c'\\å°†xx.cæ–‡ä»¶æ·»åŠ åˆ°ä»“åº“
-git remote add origin https://github.com/StarForAll/myRepository.git //å…³è”åˆ°è¿œç¨‹åº“
-git pull --rebase origin master //è·å–è¿œç¨‹åº“ä¸æœ¬åœ°åŒæ­¥åˆå¹¶
-git push -u origin master//å®é™…ä¸Šæ˜¯æŠŠå½“å‰åˆ†æ”¯testæ¨é€åˆ°è¿œç¨‹
+git config user.name       //»ñµÃgit±¾»úÓÃ»§Ãû
+git config user.email       //»ñµÃgit±¾»úÓÊÏäÃû
+git config --list //gitÅäÖÃĞÅÏ¢
+touch 'xx.c'//ÔÚ²Ö¿âÏÂĞÂ½¨xx.cÎÄ¼ş,È»ºóÊ¹ÓÃ±¾»ú±à¼­Æ÷½øĞĞ±à¼­
+git add 'xx.c'\\½«ÎÄ¼şÌí¼Óµ½Ôİ´æÇø
+git status \\ÅĞ¶ÏÎÄ¼ş×´Ì¬
+git commit -m 'xx.c'\\½«xx.cÎÄ¼şÌí¼Óµ½²Ö¿â
+git remote add origin https://github.com/StarForAll/myRepository.git //¹ØÁªµ½Ô¶³Ì¿â
+git pull --rebase origin master //»ñÈ¡Ô¶³Ì¿âÓë±¾µØÍ¬²½ºÏ²¢
+git push -u origin master//Êµ¼ÊÉÏÊÇ°Ñµ±Ç°·ÖÖ§testÍÆËÍµ½Ô¶³Ì
 
-git rm 'xx.c'\\å°†xx.cæ–‡ä»¶ä»gitä»“åº“ä¸­åˆ é™¤
+git rm 'xx.c'\\½«xx.cÎÄ¼ş´Ógit²Ö¿âÖĞÉ¾³ı
 git clone git@github.com:StarForAll/myRepository.git
 https://git clone git@github.com/StarForAll/myRepository.git
 
-å°†ä¿®æ”¹ä¹‹åçš„æ–‡ä»¶æˆ–è€…æ˜¯æ–°æ·»åŠ çš„æ–‡ä»¶(åœ¨åŸæ¥çš„ç›®å½•ä¸‹)
-1.git commit  //æ˜¾ç¤ºä¿®æ”¹çš„æ–‡ä»¶
-2.git add 'å¯¹åº”çš„æ–‡ä»¶'  //åœ¨å¯¹åº”çš„ç›®å½•ä¸‹è¿›è¡Œ
-3.git commit -m 'å¯¹åº”çš„æ–‡ä»¶'  //æäº¤åˆ°æœåŠ¡å™¨ä¸Š
-4.git push -u origin master//å®é™…ä¸Šæ˜¯æŠŠå½“å‰åˆ†æ”¯testæ¨é€åˆ°è¿œç¨‹
+½«ĞŞ¸ÄÖ®ºóµÄÎÄ¼ş»òÕßÊÇĞÂÌí¼ÓµÄÎÄ¼ş(ÔÚÔ­À´µÄÄ¿Â¼ÏÂ)
+1.git commit  //ÏÔÊ¾ĞŞ¸ÄµÄÎÄ¼ş
+2.git add '¶ÔÓ¦µÄÎÄ¼ş'  //ÔÚ¶ÔÓ¦µÄÄ¿Â¼ÏÂ½øĞĞ
+3.git commit -m '¶ÔÓ¦µÄÎÄ¼ş'  //Ìá½»µ½·şÎñÆ÷ÉÏ
+4.git push -u origin master//Êµ¼ÊÉÏÊÇ°Ñµ±Ç°·ÖÖ§testÍÆËÍµ½Ô¶³Ì
 
-git branch -a//æŸ¥çœ‹æ‰€æœ‰çš„åˆ†æ”¯
-//åˆ é™¤æ–‡ä»¶
-1.æœ¬åœ°çš„åˆ é™¤
-2.git rm -f æ–‡ä»¶å¤¹
-3.git commit -m 'remove -rf æ–‡ä»¶å¤¹'
+git branch -a//²é¿´ËùÓĞµÄ·ÖÖ§
+//É¾³ıÎÄ¼ş
+1.±¾µØµÄÉ¾³ı
+2.git rm -f ÎÄ¼ş¼Ğ
+3.git commit -m 'remove -rf ÎÄ¼ş¼Ğ'
 4.git push -u origin master
 git commit -a -m 'added a new footer [issue 53]'
-//æ–°å»ºåˆ†æ”¯
-git checkout -b  åˆ†æ”¯å//æ–°å»ºåˆ†æ”¯å¹¶è½¬åˆ°
-git add *//æ–°å»ºçš„æ–‡ä»¶æ·»åŠ åˆ°è¯¥åˆ†æ”¯ä¸­
-git commit -m 'init åˆ†æ”¯å'
-git push -u origin åˆ†æ”¯å//åŒæ­¥åˆ°æœåŠ¡å™¨ç«¯
-git checkout master//åˆ‡æ¢åˆ°masteråˆ†æ”¯
+//ĞÂ½¨·ÖÖ§
+git checkout -b  ·ÖÖ§Ãû//ĞÂ½¨·ÖÖ§²¢×ªµ½
+git add *//ĞÂ½¨µÄÎÄ¼şÌí¼Óµ½¸Ã·ÖÖ§ÖĞ
+git commit -m 'init ·ÖÖ§Ãû'
+git push -u origin ·ÖÖ§Ãû//Í¬²½µ½·şÎñÆ÷¶Ë
+git checkout master//ÇĞ»»µ½master·ÖÖ§
 
-//åˆ†æ”¯çš„åˆå¹¶:
-åœ¨masterååˆ›å»ºä¸¤ä¸ªåˆ†æ”¯,å¯ä»¥æœ‰ä¸¤ä¸ªç›¸åŒçš„æ–‡ä»¶;
-ä½†åœ¨åˆå¹¶çš„æ—¶å€™å›é‡åˆ°å†²çª,éœ€è¦è§£å†³.
-1.å›åˆ°masteråˆ†æ”¯
+//·ÖÖ§µÄºÏ²¢:
+ÔÚmasterºó´´½¨Á½¸ö·ÖÖ§,¿ÉÒÔÓĞÁ½¸öÏàÍ¬µÄÎÄ¼ş;
+µ«ÔÚºÏ²¢µÄÊ±ºò»ØÓöµ½³åÍ»,ĞèÒª½â¾ö.
+1.»Øµ½master·ÖÖ§
 git checkout master
-2.åˆå¹¶åˆ°masterä¸­
-git merge åˆ†æ”¯å
-3.åˆ é™¤è¿™ä¸ªåˆ†æ”¯
----------åœ¨é‡åˆ°ç›¸åŒçš„æ–‡ä»¶æ—¶,æœ‰ä¸¤ç§æ“ä½œ(é˜»æ­¢åˆå¹¶/ç»§ç»­åˆå¹¶)
-1>é˜»æ­¢åˆå¹¶git merge--abort
-2>ç»§ç»­åˆå¹¶:git status(æŸ¥çœ‹é‡å¤çš„æ–‡ä»¶)
-ä½¿ç”¨æ–‡ä»¶å¢åŠ (git add)æ“ä½œ,ä¹‹åä¼šå°†ä¸¤ä¸ªæ–‡ä»¶åˆå¹¶æˆä¸€ä¸ªæ–‡ä»¶.
+2.ºÏ²¢µ½masterÖĞ
+git merge ·ÖÖ§Ãû
+3.É¾³ıÕâ¸ö·ÖÖ§
+---------ÔÚÓöµ½ÏàÍ¬µÄÎÄ¼şÊ±,ÓĞÁ½ÖÖ²Ù×÷(×èÖ¹ºÏ²¢/¼ÌĞøºÏ²¢)
+1>×èÖ¹ºÏ²¢git merge--abort
+2>¼ÌĞøºÏ²¢:git status(²é¿´ÖØ¸´µÄÎÄ¼ş)
+Ê¹ÓÃÎÄ¼şÔö¼Ó(git add)²Ù×÷,Ö®ºó»á½«Á½¸öÎÄ¼şºÏ²¢³ÉÒ»¸öÎÄ¼ş.
 
+½«±¾µØÎÄ¼şÉÏ´«µ½·şÎñÆ÷:git init
+git pull origin ·ÖÖ§Ãû --allow-unrelated-histories //ÔÊĞí²»Ïà¹ØµÄÀúÊ·Ìá½»
 
-//åˆ é™¤ä¸€ä¸ªåˆ†æ”¯
-git push origin :åˆ†æ”¯å;//åˆ é™¤è¿œç¨‹çš„åˆ†æ”¯
-git branch -D åˆ†æ”¯å//åˆ é™¤æœ¬åœ°åˆ†æ”¯
+´´½¨¶ÀÁ¢·ÖÖ§:
+git checkout --orphan ·ÖÖ§Ãû
+git rm -rf .
+git add .
+git push origin ·ÖÖ§Ãû:·ÖÖ§Ãû
+
+//É¾³ıÒ»¸ö·ÖÖ§
+git push origin :·ÖÖ§Ãû;//É¾³ıÔ¶³ÌµÄ·ÖÖ§
+git branch -D ·ÖÖ§Ãû//É¾³ı±¾µØ·ÖÖ§
