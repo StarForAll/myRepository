@@ -1,4 +1,7 @@
 gcc localstatictest.c -o localstatictest -L. -lstatic(-L后面.a文件所在路径;-l后是.a文件名去除lib部分) -I头文件所在路径
 gcc -c abase.c aoperand.c(将两个.c文件转换为.o文件)
 ar crs -o libstatic.a abase.o aperand.o(将两个.o文件合并成一个.a文件[静态库文件])
+gcc -o 可执行文件名 所依赖的.c .so文件(要确定.so文件的路径，即./在当下目录) -I远端所依赖的头文件的目录 [生成装入时的远端动态可执行文件]
+
+gcc -rdynamic -o 可执行文件名 所依赖的.c -ldl -I远端所依赖的头文件的目录[生成运行时动态可执行文件]
 
