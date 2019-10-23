@@ -1,0 +1,10 @@
+//1. 创建新文件
+int  createNewFile_2();
+//2. 写文件
+int writeFile_2();
+//3. 读文件
+int readFile_2();
+//4. 修改文件权限
+char* updateFilePower();
+//5. 查看当前文件的权限修改文件权限
+void seekFilePower(char*);

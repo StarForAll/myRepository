@@ -1,0 +1,5 @@
+sleep(num);//对本进程进行阻塞num秒时间;
+getppid():获得父进程号
+getpid():获得本进程号
+system("..."):在双引号中执行Linux终端指令,如mkdir..
+fork():创建子进程.
