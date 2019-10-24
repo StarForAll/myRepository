@@ -1,5 +1,6 @@
-setvbuf(stdout,NULL,_IONBF,0);//将I/O缓冲方式改变为无缓冲方式.
-
-fclose(strout)
-fflush(stdout);//将输出缓冲区清空并输出缓冲内容
 setvbuf(stdout, NULL, _IONBF, 0);//将stdout的I/O方式转换为行缓冲方式
+(stderr)write只支持无缓冲方式,
+(stdout)输出:屏幕(行缓冲),重定向文件(全缓冲).
+fflush():刷新缓冲区,清除缓冲区内容,对应的内容立即进行IO操作.
+fclose(stdout):关闭文件流.
+
