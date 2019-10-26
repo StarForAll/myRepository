@@ -15,3 +15,5 @@ ps aux:查看所有的进程.
 kill -KILL 进程号:强制杀死这个进程,如果不加上—KILL就是普通的关闭进程,参数为-9时是彻底杀死这个进程.
 
 --------------------------------------
+
+修改linux时区为中国时区:cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
