@@ -1,0 +1,4 @@
+1.进程中保留区存在的意义以及原因
+2./sbin/init auto noprompt:
+3.kill -SIGSTOP 进程号:
+4.grep:

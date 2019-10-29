@@ -1,0 +1,11 @@
+查看所有进程:
+           ps aux
+
+     ps aux | grep test:查看test进程的信息.
+
+     ps -ef:查看所有的系统中的进程详细信息.
+
+/sbin/init auto noprompt
+
+echo $HOME:查看home是用户的主目录
+echo $PATH:显示当前PATH环境变量
