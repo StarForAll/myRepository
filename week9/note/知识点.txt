@@ -1,0 +1,9 @@
+main不是C语言的最先执行的函数,且不是函数的入口,_start才是.
+程序在刚运行的时候,会进行初始化(.init)和堆栈分配操作.
+__attribute__((constructor))函数修饰前缀是将这个函数放入init中,将其执行放在main之前.
+atexit(void function(void));是运行在main函数结束之后,是将一些释放空间,释放资源使用权等操作.atexit(回调函数)中注册的函数
+是运行在main之后的.
+_attribute_((destructor)):析构函数,在main函数执行完毕之后运行.
+execl();将当前的进程替换成一个新的进程,并占用当前的进程号.
+execlp();和上面的作用相同,但其路径从环境变量中查找.
+sysytem("命令行指令");
