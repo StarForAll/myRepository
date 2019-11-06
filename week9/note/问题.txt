@@ -1,0 +1,3 @@
+exit(num);和return在main中使用的区别;
+perror()
+sprintf(stderr,"failed to open %s,reason(%s).\n",OUTFILE,strerror(errno));
