@@ -11,4 +11,4 @@ sysytem("命令行指令");
 指令    >> 文件名:将输出错误信息存储到该文件中.
 将路径添加到环境变量PATH中:PATH=$PATH+$PWD[....具体路径]
 非正常退出:kill,Ctrl +[A-Za-z]
-
+/proc/sys/kernel/sched_child_runs_first:父子进程间的优先级设置.
