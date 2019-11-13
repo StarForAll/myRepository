@@ -1,0 +1,9 @@
+yum install vsftpd
+ls /ect/init.d/vsftpd
+service vsftpd start
+netstat -tlnp //查看是否有vsftpd服务
+ls /etc/vsftpd/ //查看vsftpd服务
+service iptables stop //关闭防火墙
+iptables -A INPUT -p TCP --dport 21 -j ACCEPT  //往防火墙上添加21端口
+service iptables status   //查看防火墙的配置
+iptables -D INPUT 5     //删除防火墙的第5条规则

@@ -1,0 +1,24 @@
+------------------------------
+Linux命令中的知识:
+在终端中输入一个不完整的词,Tab键会补全剩余的部分.
+Ctrl Shift +:三个键一起使用,就会将字体放大.
+Ctrl -:就是字体缩小.
+find xxx:find命令和ls类似.
+du -h path/文件名:得到该文件的大小.
+tar -zcvf 打包压缩后的文件名 要打包压缩的文件:进行文件压缩.
+tar xvf xxx.tar.gz -C path:将xxx.tar.gz解压到path目录中.
+cp -r 被复制的文件 path:将path复制到path目录下.
+echo "字符串">fileName:将fileNamee清空重新写入该字符串,而>>是在文件末尾加入字符串.
+touch file:在没有该文件的时候,创建这个文件/在这个文件存在的时候,修改这个文件的时间属性为当前系统时间.
+paste file file1 file2 file3 ....:将多个file文件全部合并,进行显示.
+ps aux:查看所有的进程.
+kill -KILL 进程号:强制杀死这个进程,如果不加上—KILL就是普通的关闭进程,参数为-9时是彻底杀死这个进程,
+kill -SIGSTOP 进程号:.
+grep:查找文件中符合条件的字符串.grep 字符串 文件名;在对应的文件名中查找对应含有该字符串的文件.
+
+--------------------------------------
+
+修改linux时区为中国时区:cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
+在编辑栏中输入下面的格式，就能引用的图片:
+//![](https://raw.githubusercontent.com/wiki/用户名/项目名/2.png)
