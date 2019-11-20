@@ -1,0 +1,43 @@
+/etc/init.d/myappled脚本信息内容:
+-----------------------------------------------------------------------------------
+#!/bin/bash
+. /etc/init.d/functions
+
+prog=apple
+PROG=/home/linuxprogram/week11/code/classPractice/2/Daemon
+start() {
+        echo -n $"Starting $prog: "
+        daemon "nohup ${PROG}&"
+        RETVAL=$?
+        echo
+}
+
+case "$1" in
+  start)
+        start
+        ;;
+  *)
+        echo $"Usage: $0 {start}"
+        exit 1
+esac
+
+exit $RETVAL
+--------------------------------------------------------------------------------------
+
+在/etc/apt/sources.list中添加:
+deb http://archive.ubuntu.com/ubuntu/ trusty main universe restricted multiverse
+安装sysv-rc-conf
+
+chkconfig --add myappled
+
+chkconfig --level 2345 myappled on
+
+chkconfig --list myappled
+
+在Ubuntu系统中没有chkconfig命令需要使用sysv-rc-conf来替代.
+
+sysv-rc-conf --add myappled
+
+sysv-rc-conf  --level 2345 myappled on
+
+sysv-rc-conf  --list myappled
