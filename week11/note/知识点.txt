@@ -26,8 +26,28 @@ psignal(signal[int],xxx):某个进程由xxx显示
 可执行程序&   在后台运行,在末尾加上&即可.
 8.fork()产生多个子进程并进行写文件,父进程读该文件(注意父进程读取信息时要将文件描述符放到开头).
 fork()产生一个子进程,该子进程是从这个fork()处进行程序继续执行,如果后面还有fork(),子进程也会创建其子进程
-fread(void  *buffer,size_t size,size_t count,FILE *stream):
+9.fread(void  *buffer,size_t size,size_t count,FILE *stream):
        buffer是读取出来的数据存放的数组/空间
        size是一次要读取的长度
        count是需要读取的次数
+10.wait(status)获得的子进程状态码可以由WEXITSTATUS(status)获得
+等待子进程的结束,回收该子进程的空间资源和pid,就不会出现僵尸进程的情况.
+等待所有的子进程结束:while(wait(NULL)!=-1);
+没有子进程wait()函数就会返回-1.
+waitpid(pid_t pid,int * status,int options):
+pid就是fork()产生的pid,status存储子进程结束之后状态码,options在等于0的情况下等待该子进程结束,
+如果是WNOHANG没有已经结束的子进程就马上返回,如果是WUNTRACED在子进程进入等待状态就马上返回,
+结束状态不予理会.
+waitpid(pid,NULL,WNOHANG):处理处于僵尸状态的子进程,没有会立即返回
+11.写时复制:fork中的现象
+fork():父子进程在读内存时两者相安无事,但有进程进行写操作,就会创建新的空间(数据段/堆栈),
+两者各自拥有自己的空间(虚存的地址是相同的).
 
+12.execl相关的函数是停止当前进程的使用,转换到新的进程来
+
+vfork子进程先行,在子进程调用exec/exit之前,父子进程共享相同的空间(不同于复制父进程的空间),
+但当调用之后父进程就会执行且两者就不会使用同一个空间.
+
+13.fork():子进程复制父进程的数据/堆栈段,虚存地址相同,但实际的内存地址不同,表现为程序中得到的地址是相同的,但得到的数据value是不相关的.
+
+setpgid(0,0):
