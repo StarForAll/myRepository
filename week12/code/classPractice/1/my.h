@@ -8,3 +8,6 @@
 #include<sys/types.h>
 #include<sys/stat.h>
 #include<time.h>
+#include<errno.h>
+//2中2.c中的函数声明
+void signalhandler(int signo);
