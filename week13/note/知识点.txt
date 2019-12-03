@@ -1,0 +1,14 @@
+信号是一种异步通信机制
+
+信号按照是否可靠分类
+1-31:不可靠,不保证信号传递到对应的进程,信号可能丢失.
+34-64:可靠,但不能超过上限
+ulimit -a:显示用户配置信息
+
+kill(pid,signo):对进程号为pid的进程传递信号signo
+sigqueue(pid_t pid, int sig, const union sigval val):对进程号为pid的进程传递信号sig并传递附加信息.
+sigfillset(数组):该集合包含64中信号
+sigaction(int signum, const struct sigaction *act, struct sigaction *oldact):指定信号的处理函数
+signal(int sig,函数名):设置对sig信号的处理函数
+%-10s:-代表左对齐,10表示字段宽度,s是字符串格式
+signal/sigaction不能对SIGKILL/SIGSTOP信号进行处理.
