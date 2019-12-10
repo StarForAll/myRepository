@@ -1,0 +1,16 @@
+线程
+    私有:栈
+    共享:代码段,堆
+
+内核/用户线程:clone派生.
+
+一个函数要在另一个函数使用,要在头文件中进行声明.
+
+创建线程:
+pthread_t tid;
+pthread_create(&tid,NULL,threadfunction,NULL);
+返回值为0创建线程成功,否则创建失败.
+
+等待tid线程运行结束
+pthread_join(tid,NULL);
+
