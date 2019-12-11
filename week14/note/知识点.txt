@@ -14,3 +14,32 @@ pthread_create(&tid,NULL,threadfunction,NULL);
 等待tid线程运行结束
 pthread_join(tid,NULL);
 
+含线程的创建的可执行文件生成:普通格式+-lpthread
+
+pthread_create/pthread_join结合使用:同步/接受线程函数中的返回值.
+创建线程:
+pthread_create(&tid[i],NULL,(void *(*)())fun,(void*)i);
+在线程函数中[void *fun(void *arg)]:
+int *sum;
+sum=(int*)malloc(sizeof(int));
+pthread_exit((void*)sum);
+int **getResult;
+接受线程函数中的返回值
+pthread_join(tid[i],(void**)&getResult);
+异步线程:
+pthread_detach(tid);
+
+锁
+pthread_rwlock_t rwlock;
+初始化读写锁
+pthread_rwlock_init(&rwlock,NULL);
+写入读写锁中的锁
+pthread_rwlock_wrlock(&rwlock);
+解除锁定读写锁
+pthread_rwlock_unlock(&rwlock);
+读取读写锁中的锁
+pthread_rwlock_rdlock(&rwlock);
+销毁读写锁
+pthread_rwlock_destroy(&rwlock);
+反汇编可执行程序并将其输出到对应的文件中
+objdump -d 5 >5_objdump.txt
