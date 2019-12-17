@@ -1,0 +1,24 @@
+线程读写锁的使用:
+pthread_rwlock_t rwlock;
+pthread_rwlock_init(&rwlock,NULL);
+pthread_rwlock_wrlock(&rwlock);
+pthread_create(&tid[i],NULL,fun,NULL);
+线程内部:
+         pthread_rwlock_rdlock(&rwlock);
+         pthread_rwlock_unlock(&rwlock);
+pthread_rwlock_unlock(&rwlock);
+        for(int i=0;i<LOOP;i++){
+                pthread_join(tid[i],NULL);
+        }
+pthread_rwlock_destroy(&rwlock);
+线程读写锁不安全,会有可能被其他的线程占用,可以在线程内部使用函数中加入mutex进行互斥使用,更加安全.
+pthread_mutex_t mutex=PTHREAD_MUTEX_INITIALIZER;
+pthread_mutex_lock(&mutex);
+pthread_mutex_unlock(&mutex);
+互斥读者写者锁使用
+pthread_rwlockattr_t rwlock_attr;
+	pthread_rwlockattr_init(&rwlock_attr);
+读者或写者的优先级的设置:
+.................................(未写)
+pthread_rwlock_init(&rwlock,&rwlock_attr);
+pthread_rwlockattr_destroy(&rwlock_attr);

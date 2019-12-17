@@ -1,0 +1,3 @@
+这是第15周linux学习:关于线程加锁的问题
+pthread_rwlock_t rwlock,pthread_mutex_t mutex=PTHREAD_MUTEX_INITIALIZER,
+pthread_rwlockattr_t rwlock_attr;
