@@ -9,11 +9,11 @@
 #include<sys/types.h>
 #include <sys/stat.h>
 #define FILENAME "file.data"
-#define TN 100
+#define TN 10
 //1. 创建新文件
 int  createNewFile(char *);
 //2. 写文件
-int writeFile(char *,int,int);
+int writeFile(char *,int,int,char*);
 //3. 读文件
 int readFile(char *,int);
 //4. 修改文件权限
