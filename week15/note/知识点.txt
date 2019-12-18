@@ -22,3 +22,12 @@ pthread_rwlockattr_t rwlock_attr;
 .................................(未写)
 pthread_rwlock_init(&rwlock,&rwlock_attr);
 pthread_rwlockattr_destroy(&rwlock_attr);
+
+加mutex会保证这个公共数据是同时只能有一个数据访问,而不会保证访问的顺序问题;
+在程序中使用sem_t(信号量),保证了先后的访问次序.
+sem_t full,empty;
+sem_init(&empty,0,1);sem_init(&full,1,0);
+sem_wait(&full);sem_post(&empty);
+
+mutex+thread_cond_t q=PTHREAD_COND_INITIALIZER(条件变量的使用)
+也可以达到线程互斥访问的结果.

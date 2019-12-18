@@ -1,0 +1,2 @@
+这是对mutex/信号量/条件变量thread_cond_t q=PTHREAD_COND_INITIALIZER的使用
+达到的目的是线程的访问有着先后顺序性

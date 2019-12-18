@@ -8,6 +8,7 @@
 #include<sys/time.h>
 #include<sys/types.h>
 #include<limits.h>
+#include<semaphore.h>
 #define LENGTH 100
 #define LOOP 1000
 #define NUM 2
