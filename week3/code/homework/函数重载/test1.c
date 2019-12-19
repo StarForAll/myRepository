@@ -4,7 +4,7 @@ void prin(int n){
      printf("this is a int , = %d.",n);
 }
 void prin(double n){
-     printf("this is a int , = %f.",n);
+     printf("this is a folat , = %f.",n);
 }
 int main(){
     prin(1);
