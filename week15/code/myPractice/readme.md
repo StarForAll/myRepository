@@ -9,3 +9,4 @@ gcc -c IOFunction.c
 ar crs -o libstatic.a IOFunction.o
 gcc useThread.c -o useThread -lpthread -L. -lstatic
 
+useThread.c:读者/写者

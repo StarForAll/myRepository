@@ -1,31 +1,24 @@
 #include"IOlib.h"
-pthread_mutex_t mutex=PTHREAD_MUTEX_INITIALIZER;
 static pthread_rwlock_t rwlock;
 static int share=0;
 void *reader(void *param){
 	int i=(int)param;
-	int time=0;
-	while(time++<100){
+	while(share<100){
 		pthread_rwlock_rdlock(&rwlock);
-		pthread_mutex_lock(&mutex);
 		readFile(FILENAME,i);
-		pthread_mutex_unlock(&mutex);
 		pthread_rwlock_unlock(&rwlock);
-		sleep(1);
+		//sleep(1);
 		}
 	return NULL;
 }
 void *writer(void *param){
         int i=(int)param;
-	int time=0;
-        while(time++<100){
+        while(share<100){
                 pthread_rwlock_rdlock(&rwlock);
-		pthread_mutex_lock(&mutex);
 		share++;
                 writeFile(FILENAME,i,share,NULL);
-		pthread_mutex_unlock(&mutex);
                 pthread_rwlock_unlock(&rwlock);
-		sleep(1);
+		//sleep(1);
         }
         return NULL;
 }

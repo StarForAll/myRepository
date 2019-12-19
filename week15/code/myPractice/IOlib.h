@@ -8,8 +8,10 @@
 #include<sys/time.h>
 #include<sys/types.h>
 #include <sys/stat.h>
+#include<semaphore.h>
+#include"ringBuffer.h"
 #define FILENAME "file.data"
-#define TN 10
+#define TN 2
 //1. 创建新文件
 int  createNewFile(char *);
 //2. 写文件
