@@ -11,12 +11,12 @@ int main(){
 	memset(buf,0,1024);
 	in = open(INFILE,O_RDONLY);
 	if(in<0){
-		sprintf(stderr,"failed to open %s,reason(%s).\n",INFILE,strerror(errno));
+		fprintf(stderr,"failed to open %s,reason(%s).\n",INFILE,strerror(errno));
 		return 1;
 	}
 	out = open(OUTFILE,O_WRONLY|O_CREAT|O_TRUNC,MODE);
         if(out<0){
-		sprintf(stderr,"failed to open %s,reason(%s).\n",OUTFILE,strerror(errno));
+		fprintf(stderr,"failed to open %s,reason(%s).\n",OUTFILE,strerror(errno));
                 return 1;
 	}	
 	fork();

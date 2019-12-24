@@ -9,9 +9,8 @@
 #include<sys/types.h>
 #include <sys/stat.h>
 #include<semaphore.h>
-#include"ringBuffer.h"
-#define FILENAME "file.data"
-#define TN 2
+#define FILENAME "service.log"
+#define TN 4
 //1. 创建新文件
 int  createNewFile(char *);
 //2. 写文件

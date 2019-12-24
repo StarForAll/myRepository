@@ -13,7 +13,7 @@ int main(){
 		exit(120);
 	}else{
 		printf("parent waiting child %d to exit.\n",pid);
-		while((r=wait(&status))!=-1){
+		while((r=wait(&status))>=0){
 			if(WIFEXITED(status)){
 		printf("child %d is finished with exit mode.exit code = %d.\n",r,WEXITSTATUS(status));
 			}else if(WIFSIGNALED(status)){

@@ -28,7 +28,7 @@ int main(){
 	printf("running in main.\n");
 	printf("main end");
 	//while(1);
-	//exit(0);
-	_exit(0);
+	exit(0);
+	//_exit(0);
 	//return 0;
 }

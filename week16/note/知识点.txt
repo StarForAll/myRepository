@@ -1,0 +1,21 @@
+套接字:
+       应用层:规定了基础的数据格式(ICQ,https,ftp,telnet)
+       传输层:
+       网络层:
+       网络接口层:
+
+套接字和端口:
+      socket->NFS,网络文件句柄/物理  ,差错控制+时序
+      cpu->内存->网卡(在内存中有映射地址)->远程计算机(端口:远程计算机在本地计算机内存建立的内存映像)
+      不同的应用(ftp,https...)使用不同的端口,有不同的内存映射.
+      从远程计算机传输来的是比特流数据,本地计算机需要使用(TCP/UDP)套接字对其进行解析
+
+TCP:
+    服务器端:
+             固定的IP和端口,B/S结构;
+             两个套接字:scfd(监听,提供请求队列供客户端等待服务),acfd(数据交互)
+             步骤:scfd->bind(scfd,IP,port)->listen(scfs,BACKLOG)建立请求队列
+                  acfd=accept(scfd,&remoteaddress);->write(send(asfd))/read(rec(asfd))
+                  
+    select:端口多路复用;
+             
