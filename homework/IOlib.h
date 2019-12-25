@@ -15,7 +15,7 @@
 #include<semaphore.h>
 #define MAXDATASIZE 256
 
-#define SERVPORT 4545	/*服务器监听端口号*/
+#define SERVPORT 6666	/*服务器监听端口号*/
 #define BACKLOG 10     	/*最大同时连接请求数*/
 #define FILENAME "service.log"
 #define TN 4

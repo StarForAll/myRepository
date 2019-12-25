@@ -195,7 +195,7 @@ void *clientThread(void *param){
 			perror("select error: ");
                         break;
 		}
-		if (time ==0) {
+		if (time <10) {
 			strcpy(send_str, "客户端系统时间:");
 			//printf("len:date=%ld\n", strlen(getNowDate()));
 			strcat(send_str, nowDate);
