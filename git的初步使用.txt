@@ -1,0 +1,176 @@
+(本机git仓库地址在"/demo1"或者myRepository中)
+
+本机增加ssh key
+
+ssh-keygen -t rsa -C "用户邮箱"\\建立ssh链接
+
+ssh -v git@github.com
+
+ssh-agent -s
+
+ssh-add ~/.ssh/id_rsa
+
+ssh -T git@github.com
+
+
+
+git  config --global  user.name '用户名'
+
+git  config --global  user.email '用户邮箱'
+
+git config user.name       //获得git本机用户名
+
+git config user.email       //获得git本机邮箱名
+
+git config --list //git配置信息
+
+touch 'xx.c'//在仓库下新建xx.c文件,然后使用本机编辑器进行编辑
+
+git add 'xx.c'\\将文件添加到暂存区
+
+git status \\判断文件状态
+
+git commit -m 'xx.c'\\将xx.c文件添加到仓库
+
+git remote add origin git@github.com:用户名/仓库名.git(ssh协议) //关联到远程库  https://github.com/用户名/仓库名.git(http协议)
+
+git remote set-url origin git@github.com:用户名/仓库名.git   //从http协议验证转换为ssh验证
+
+git pull --rebase origin master //获取远程库与本地同步合并
+
+git push -u origin master//实际上是把当前分支test推送到远程
+
+
+
+git rm 'xx.c'\\将xx.c文件从git仓库中删除
+
+git clone git@github.com:用户名/仓库名.git
+
+将修改之后的文件或者是新添加的文件(在原来的目录下)
+
+1.git commit  //显示修改的文件
+
+2.git add '对应的文件'  //在对应的目录下进行
+
+3.git commit -m '对应的文件'  //提交到服务器上
+
+4.git push -u origin master//实际上是把当前分支test推送到远程
+
+
+
+git rm 'xx.c'\\将xx.c文件从git仓库中删除
+
+
+
+git branch -a//查看所有的分支
+
+//删除文件
+
+1.本地的删除
+
+2.git rm -f 文件夹
+
+3.git commit -m 'remove -rf 文件夹'
+
+4.git push -u origin master
+
+git commit -a -m 'added a new footer [issue 53]'
+
+//新建分支
+
+git checkout -b  分支名//新建分支并转到
+
+git add *//新建的文件添加到该分支中
+
+git commit -m 'init 分支名'
+
+git push -u origin 分支名//同步到服务器端
+
+git checkout master//切换到master分支
+
+
+
+//分支的合并:
+
+在master后创建两个分支,可以有两个相同的文件;
+
+但在合并的时候回遇到冲突,需要解决.
+
+1.回到master分支
+
+git checkout master
+
+2.合并到master中
+
+git merge 分支名
+
+3.删除这个分支
+
+---------在遇到相同的文件时,有两种操作(阻止合并/继续合并)
+
+1>阻止合并git merge--abort
+
+2>继续合并:git status(查看重复的文件)
+
+使用文件增加(git add)操作,之后会将两个文件合并成一个文件.
+
+
+
+将本地文件上传到服务器:git init
+
+git pull origin 分支名 --allow-unrelated-histories //允许不相关的历史提交
+
+
+
+创建独立分支:
+
+git checkout --orphan 分支名
+
+git rm -rf .
+
+git add .
+
+git push origin 分支名:分支名
+
+
+
+//删除一个分支
+
+git push origin :分支名;//删除远程的分支
+
+git branch -D 分支名//删除本地分支
+
+
+
+
+
+一个仓库a引用另一个仓库b的文件
+
+-----------------
+
+git submodule add 远端仓库地址 本地目录ab(事先不存在)
+
+获得仓库b更新之后的内容:
+
+方法1.来到ab目录再执行git pull即可.
+
+方法2.git submodule foreach git pull
+
+克隆远端仓库到本地且有submodule
+
+git clone 远端地址 目录名 --recursive
+
+-------------------
+
+subtree方式(新):
+
+git remote add subtree-origin 仓库b地址 
+
+git subtree add --prefix=目录名(会添加到此目录中) subtree-origin 远端仓库分支名(一般是master) --squash
+
+git subtree pull --prefix=目录名(会添加到此目录中) subtree-origin 远端仓库分支名(一般是master) --squash  //获取更新之后的远端内容
+
+git subtree push --prefix=目录名(会添加到此目录中) subtree-origin 远端仓库分支名(一般是master) --squash// 将本地修改的内容更新到仓库b中
+
+
+git init->git remote add origin git@github.com:StarForAll/myRepository.git(SSH地址)->git remote -v->git checkout -b 新分支->文件操作->git add *->git commit -m 'xxx'->git push origin 新分支
